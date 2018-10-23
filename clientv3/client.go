@@ -32,7 +32,10 @@ func New(cfg Config) (*Client, error) {
 	c := &Client{
 		Lease: &lessor{},
 	}
-	kv := newKV(cfg)
+	kv, err := newKV(cfg)
+	if err != nil {
+		return nil, err
+	}
 	c.KV = kv
 	c.Watcher = kv
 	return c, nil

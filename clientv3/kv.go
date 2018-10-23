@@ -26,7 +26,6 @@ import (
 	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
 	"github.com/coreos/etcd/mvcc/mvccpb"
 	"github.com/docker/docker/pkg/locker"
-	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 )
 

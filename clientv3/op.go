@@ -179,6 +179,13 @@ func WithRange(endKey string) OpOption {
 	return func(op *Op) { op.boundingKey = endKey }
 }
 
+// WithSerializable makes 'Get' request serializable. By default,
+// it's linearizable. Serializable requests are better for lower latency
+// requirement.
+func WithSerializable() OpOption {
+	return func(op *Op) {}
+}
+
 // WithCountOnly makes the 'Get' request return only the count of keys.
 func WithCountOnly() OpOption {
 	return func(op *Op) { op.countOnly = true }
