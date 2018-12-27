@@ -85,12 +85,6 @@ func New(c *clientv3.Client, codec runtime.Codec, prefix string, transformer val
 	return newStore(c, true, pagingEnabled, codec, prefix, transformer)
 }
 
-// NewWithNoQuorumRead returns etcd3 implementation of storage.Interface
-// where Get operations don't require quorum read.
-func NewWithNoQuorumRead(c *clientv3.Client, codec runtime.Codec, prefix string, transformer value.Transformer, pagingEnabled bool) storage.Interface {
-	return newStore(c, false, pagingEnabled, codec, prefix, transformer)
-}
-
 func newStore(c *clientv3.Client, quorumRead, pagingEnabled bool, codec runtime.Codec, prefix string, transformer value.Transformer) *store {
 	versioner := etcd.APIObjectVersioner{}
 	result := &store{
