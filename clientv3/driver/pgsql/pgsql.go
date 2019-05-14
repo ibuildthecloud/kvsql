@@ -2,7 +2,6 @@ package pgsql
 
 import (
 	"database/sql"
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
