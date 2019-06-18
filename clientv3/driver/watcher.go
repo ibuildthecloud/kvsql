@@ -2,7 +2,6 @@ package driver
 
 import (
 	"context"
-	"io"
 	"strings"
 )
 
